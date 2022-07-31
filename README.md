@@ -1,3 +1,3 @@
 # HART-KMS-Display
 
-Arduino code for the Nextion display for the HAN Automotive Rally Team
+Files for the Renault Clio Display of the HAN Automotive Rally Team

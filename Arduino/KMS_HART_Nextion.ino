@@ -90,8 +90,8 @@ void loop()
                          // from Nextion touch panel. Actually, you should place it in your loop function.
   
   CANKMS();
-  //FUELLEVEL();
-  //FUELPRESSURE();
+  FUELLEVEL();
+  FUELPRESSURE();
   //GearPositionCalculated();
 
 }

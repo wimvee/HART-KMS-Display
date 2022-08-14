@@ -122,9 +122,6 @@ if (mcp2515.readMessage(&canMsg) == MCP2515::ERROR_OK)
  *  rpm   
  *        Sending the variable to the nextion
  */
-//int rpm_pb_30= myNex.readNumber("options.rpm_pb_30.val");   // We read the value of the desired rpm at 30% of the progressbar
-//int rpm_pb_69= myNex.readNumber("options.rpm_pb_69.val");   // We read the value of the desired rpm at 69% of the progressbar
-//int rpm_pb_100= myNex.readNumber("options.rpm_pb_100.val");   // We read the value of the desired rpm at 100% of the progressbar
  
  
           rpm = (MD35_1_0*256+MD35_1_1)*10;
@@ -145,8 +142,6 @@ if (mcp2515.readMessage(&canMsg) == MCP2515::ERROR_OK)
  *  Water temperature
  *  
  */
-//int water_pb_25= myNex.readNumber("options.water_pb_25.val");   // We read the value of the desired water at 25% of the progressbar
-//int water_pb_75= myNex.readNumber("options.water_pb_75.val");   // We read the value of the desired water at 75% of the progressbar
 
 
         float water_temp = (MD35_1_2)-20;
@@ -208,8 +203,6 @@ if (mcp2515.readMessage(&canMsg) == MCP2515::ERROR_OK)
 /* 
  *  Battery voltage
  */
-//int voltage_pb_25= myNex.readNumber("options.voltage_pb_25.val");   // We read the value of the desired voltage at 25% of the progressbar
-//int voltage_pb_75= myNex.readNumber("options.voltage_pb_75.val");   // We read the value of the desired voltage at 75% of the progressbar
  
         float voltage = (MD35_2_2*0.25)+8;
           if( millis() - voltage_previousTime >= voltage_eventInterval)
@@ -407,14 +400,6 @@ void trigger0(){
   EEPROM.put(20,water_pb_75);
   EEPROM.put(25,voltage_pb_25);
   EEPROM.put(30,voltage_pb_75);
-
-myNex.writeNum("options.n0.val", rpm_pb_30);
-myNex.writeNum("options.n2.val", rpm_pb_69);
-myNex.writeNum("options.n3.val", rpm_pb_100);
-myNex.writeNum("options.n4.val", water_pb_25);
-myNex.writeNum("options.n5.val", water_pb_75);
-myNex.writeNum("options.n6.val", voltage_pb_25);
-myNex.writeNum("options.n7.val", voltage_pb_75);
 
 }
 
